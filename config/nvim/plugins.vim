@@ -76,9 +76,11 @@ Plug 'othree/yajs.vim'
 " === UI === "
 " File explorer
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-vinegar'
 
 " Colorscheme
 Plug 'mhartington/oceanic-next'
+Plug 'cormacrelf/vim-colors-github'
 
 " Customized vim status line
 Plug 'vim-airline/vim-airline'
@@ -87,6 +89,13 @@ Plug 'vim-airline/vim-airline-themes'
 " Icons
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" Text editing
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+
+" Editor config
+Plug 'editorconfig/editorconfig-vim'
 
 " Initialize plugin system
 call plug#end()

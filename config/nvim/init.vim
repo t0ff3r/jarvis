@@ -242,7 +242,7 @@ set termguicolors
 " Editor theme
 set background=dark
 try
-  colorscheme OceanicNext
+  colorscheme github
 catch
   colorscheme slate
 endtry
@@ -288,8 +288,8 @@ hi! StatusLine guifg=#16252b guibg=#6699CC
 hi! StatusLineNC guifg=#16252b guibg=#16252b
 
 " Try to hide vertical spit and end of buffer symbol
-hi! VertSplit gui=NONE guifg=#17252c guibg=#17252c
-hi! EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=#17252c guifg=#17252c
+hi! VertSplit gui=NONE guifg=#ffffff guibg=#ffffff
+hi! EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=#ffffff guifg=#ffffff
 
 " Customize NERDTree directory
 hi! NERDTreeCWD guifg=#99c794
@@ -341,7 +341,7 @@ nmap <leader>f :NERDTreeFind<CR>
 "   <Space> - PageDown
 "   -       - PageUp
 noremap <Space> <PageDown>
-noremap - <PageUp>
+" noremap - <PageUp>
 
 " === coc.nvim === "
 nmap <silent> <leader>dd <Plug>(coc-definition)
@@ -374,6 +374,22 @@ nmap <leader>z :JsDoc<CR>
 " Vim's default buffer
 vnoremap <leader>p "_dP
 
+" Exploring
+nnoremap - :Explore<cr>
+
+" File buffers
+nnoremap <Tab> :bnext!<CR>
+nnoremap <S-Tab> :bprev!<CR>
+noremap <Leader>ka :bufdo bd!<cr>
+nnoremap <C-X> :bdelete<CR>
+
+" Splitting
+map <leader>v :vsplit<CR>
+map <leader>h :split<CR>
+
+" Make current pane full screen
+nnoremap <Leader>o :only<CR>
+
 " ============================================================================ "
 " ===                                 MISC.                                === "
 " ============================================================================ "
@@ -392,7 +408,7 @@ set smartcase
 set autoread
 
 " Enable line numbers
-set number
+" set number
 
 " Set backups
 if has('persistent_undo')
