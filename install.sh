@@ -27,7 +27,7 @@ echo "---------------------------------------------------------"
 
 packages=(
   "git"
-  "node"
+  "nvm"
   "tmux"
   "neovim"
   "python3"
@@ -42,6 +42,12 @@ do
   brew install $i
   echo "---------------------------------------------------------"
 done
+
+echo "---------------------------------------------------------"
+echo "$(tput setaf 2)JARVIS: Cleaning up spilled brews.$(tput sgr 0)"
+echo "---------------------------------------------------------"
+
+brew cleanup
 
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)JARVIS: Installing Python NeoVim client.$(tput sgr 0)"
@@ -114,6 +120,11 @@ echo "---------------------------------------------------------"
 npm install -g vtop
 
 echo "---------------------------------------------------------"
+echo "$(tput setaf 2)JARVIS: Installing commitizen.$(tput sgr 0)"
+echo "---------------------------------------------------------"
+npm install -g commitizen
+
+echo "---------------------------------------------------------"
 echo "$(tput setaf 2)JARVIS: Installing Neovim plugins and linking dotfiles.$(tput sgr 0)"
 echo "---------------------------------------------------------"
 
@@ -142,7 +153,7 @@ echo "$(tput setaf 2)JARVIS: Switching shell to zsh. You may need to logout.$(tp
 echo "---------------------------------------------------------"
 
 sudo sh -c "echo $(which zsh) >> /etc/shells"
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)JARVIS: System update complete. Currently running at 100% power. Enjoy.$(tput sgr 0)"
